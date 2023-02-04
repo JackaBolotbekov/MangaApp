@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.detail
+package com.example.animeapp.ui.fragments.anime.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,15 +8,15 @@ import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bumptech.glide.Glide
 import com.example.animeapp.R
-import com.example.animeapp.databinding.FragmentDetailBinding
+import com.example.animeapp.databinding.FragmentAnimeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailFragment : Fragment(R.layout.fragment_detail) {
+class AnimeDetailFragment : Fragment(R.layout.fragment_anime_detail) {
 
-    private val viewModel: DetailViewModel by viewModels()
-    private val binding by viewBinding(FragmentDetailBinding::bind)
-    private val args by navArgs<DetailFragmentArgs>()
+    private val viewModel: AnimeDetailViewModel by viewModels()
+    private val binding by viewBinding(FragmentAnimeDetailBinding::bind)
+    private val args by navArgs<AnimeDetailFragmentArgs>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

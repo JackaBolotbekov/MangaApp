@@ -1,23 +1,22 @@
-package com.example.animeapp.ui.fragments._main
+package com.example.animeapp.ui.fragments.anime
 
 import android.os.Bundle
 import android.view.View
-import android.view.View.OnClickListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapp.R
-import com.example.animeapp.databinding.FragmentMainBinding
-import com.example.animeapp.ui.adapters.Adapter
+import com.example.animeapp.databinding.FragmentAnimeBinding
+import com.example.animeapp.ui.adapters.AnimeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : Fragment(R.layout.fragment_main) {
+class AnimeFragment : Fragment(R.layout.fragment_anime) {
 
-    private val viewModel: MainViewModel by viewModels()
-    private val binding by viewBinding(FragmentMainBinding::bind)
-    private val mainAdapter = Adapter(this::onClickListeners)
+    private val viewModel: AnimeViewModel by viewModels()
+    private val binding by viewBinding(FragmentAnimeBinding::bind)
+    private val mainAdapter = AnimeAdapter(this::onClickListeners)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -36,6 +35,6 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun onClickListeners(id: String) {
-        findNavController().navigate(MainFragmentDirections.actionMainFragmentToDetailFragment(id.toInt()))
+        findNavController().navigate(AnimeFragmentDirections.actionAnimeFragmentToAnimeDetailFragment(id.toInt()))
     }
 }

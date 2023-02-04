@@ -7,21 +7,21 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animeapp.databinding.ItemCountBinding
-import com.example.animeapp.data.models._main.DataItem
+import com.example.animeapp.data.models.anime.DataItem
 
-class Adapter(
+class AnimeAdapter(
     private val onClickListener: (id: String) -> Unit
 ) :
-    ListAdapter<DataItem, Adapter.ViewHolder>(diffUtil) {
+    ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
-    inner class ViewHolder(private val binding: ItemCountBinding) :
+    inner class AnimeViewHolder(private val binding: ItemCountBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
                 getItem(bindingAdapterPosition).apply { onClickListener(id) }
             }
-        }
+    }
 
         fun onBind(item: DataItem) {
             Glide.with(binding.ivImage.context)
@@ -31,8 +31,8 @@ class Adapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
+        return AnimeViewHolder(
             ItemCountBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -41,7 +41,7 @@ class Adapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AnimeViewHolder, position: Int) {
         getItem(position).let {
             holder.onBind(it)
         }

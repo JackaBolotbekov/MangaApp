@@ -24,9 +24,7 @@ class RetrofitClient {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    private fun provideLoggingInterceptor() =
-        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    fun provideAnimeApiService(): AnimeApiService =
-        retrofitClient.create(AnimeApiService::class.java)
+    fun provideAnimeApiService(): AnimeApiService = retrofitClient.create(AnimeApiService::class.java)
 }

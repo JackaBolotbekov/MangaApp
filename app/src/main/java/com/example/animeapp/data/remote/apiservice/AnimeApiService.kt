@@ -1,13 +1,13 @@
 package com.example.animeapp.data.remote.apiservice
 
-import com.example.animeapp.data.models._main.AnimeResponse
-import com.example.animeapp.data.models._main.DataItem
+import com.example.animeapp.data.models.anime.AnimeResponse
+import com.example.animeapp.data.models.anime.DataItem
 import com.example.animeapp.data.models.detail.AnimeDetail
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface AnimeApiService {
+
     @GET("anime")
     suspend fun fetchAnime(): AnimeResponse<DataItem>
 
