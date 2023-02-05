@@ -21,7 +21,7 @@ class AnimeAdapter(
             itemView.setOnClickListener {
                 getItem(bindingAdapterPosition).apply { onClickListener(id) }
             }
-    }
+        }
 
         fun onBind(item: DataItem) {
             Glide.with(binding.ivImage.context)
