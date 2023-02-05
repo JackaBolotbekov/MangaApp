@@ -1,6 +1,6 @@
 package com.example.animeapp.data.remote
 
-import com.example.animeapp.data.remote.apiservice.AnimeApiService
+import com.example.animeapp.data.remote.apiservice.ApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -26,5 +26,5 @@ class RetrofitClient {
 
     private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    fun provideAnimeApiService(): AnimeApiService = retrofitClient.create(AnimeApiService::class.java)
+    fun provideAnimeApiService(): ApiService = retrofitClient.create(ApiService::class.java)
 }

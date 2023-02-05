@@ -1,4 +1,4 @@
-package com.example.animeapp.data.models.detail
+package com.example.animeapp.data.models.anime.detail
 
 import com.example.animeapp.data.models.anime.DataItem
 import com.google.gson.annotations.SerializedName

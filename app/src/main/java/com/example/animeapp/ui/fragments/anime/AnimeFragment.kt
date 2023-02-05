@@ -16,7 +16,7 @@ class AnimeFragment : Fragment(R.layout.fragment_anime) {
 
     private val viewModel: AnimeViewModel by viewModels()
     private val binding by viewBinding(FragmentAnimeBinding::bind)
-    private val mainAdapter = AnimeAdapter(this::onClickListeners)
+    private val animeAdapter = AnimeAdapter(this::onClickListeners)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,12 +25,12 @@ class AnimeFragment : Fragment(R.layout.fragment_anime) {
     }
 
     private fun initial() = with(binding) {
-        recyclerView.adapter = mainAdapter
+        recyclerView.adapter = animeAdapter
     }
 
     private fun setupObserves() {
         viewModel.fetchAnime().observe(viewLifecycleOwner) {
-            mainAdapter.submitList(it.data)
+            animeAdapter.submitList(it.data)
         }
     }
 

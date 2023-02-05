@@ -24,4 +24,24 @@
             app:argType="integer"
             android:defaultValue="0"/>
     </fragment>
+    <fragment
+        android:id="@+id/mangaFragment"
+        android:name="com.example.animeapp.ui.fragments.manga.MangaFragment"
+        android:label="fragment_manga"
+        tools:layout="@layout/fragment_manga" >
+        <action
+            android:id="@+id/action_mangaFragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.example.animeapp.ui.fragments.manga.detail.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0"/>
+    </fragment>
+
 </navigation>

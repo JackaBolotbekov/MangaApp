@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.animeapp.databinding.ItemCountBinding
+import com.example.animeapp.databinding.ItemAnimeBinding
 import com.example.animeapp.data.models.anime.DataItem
 
 class AnimeAdapter(
@@ -14,7 +14,7 @@ class AnimeAdapter(
 ) :
     ListAdapter<DataItem, AnimeAdapter.AnimeViewHolder>(diffUtil) {
 
-    inner class AnimeViewHolder(private val binding: ItemCountBinding) :
+    inner class AnimeViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
@@ -33,7 +33,7 @@ class AnimeAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimeViewHolder {
         return AnimeViewHolder(
-            ItemCountBinding.inflate(
+            ItemAnimeBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false

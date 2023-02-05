@@ -6,5 +6,5 @@ data class Attributes(
     @SerializedName("posterImage")
     val posterImage: PosterImage,
     @SerializedName("titles")
-    val titles: Titles,
+    val titles: MangaTitles,
 )
