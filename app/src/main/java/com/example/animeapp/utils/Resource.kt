@@ -11,7 +11,7 @@ sealed class Resource<T>(
 
     class Error<T>(data: T?, message: String = "") : Resource<T>(data, message)
 }
-*/// После
+*/ // После
 
 sealed class Resource<out T>(
     val data: T? = null,
