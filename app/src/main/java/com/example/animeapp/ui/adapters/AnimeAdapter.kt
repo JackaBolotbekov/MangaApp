@@ -19,7 +19,7 @@ class AnimeAdapter(
 
         init {
             itemView.setOnClickListener {
-                getItem(bindingAdapterPosition).apply { onClickListener(id) }
+                getItem(absoluteAdapterPosition).apply { onClickListener(id) }
             }
         }
 

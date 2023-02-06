@@ -30,7 +30,7 @@ class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetail
                     showText("Error")
                 }
                 is Resource.Loading -> {
-                    showText("Loading")
+                    showText("Detail")
                 }
                 is Resource.Success -> {
                     Glide.with(ivFullscreen.context)

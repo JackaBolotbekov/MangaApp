@@ -1,9 +1,8 @@
 package com.example.animeapp.ui.actvity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapp.R
 import com.example.animeapp.databinding.ActivityMainBinding
@@ -24,7 +23,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        // Нижняя навигация
-        binding.bottomNavigation.setupWithNavController(navController)
     }
 }
