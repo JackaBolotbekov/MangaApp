@@ -8,7 +8,7 @@ import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentAnimeBinding
 import com.example.animeapp.extensions.showText
 import com.example.animeapp.ui.adapters.AnimeAdapter
-import com.example.animeapp.ui.fragments.pager.PagerFragmentDirections
+import com.example.animeapp.ui.fragments.pager.HomeFragmentDirections
 import com.example.animeapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -50,7 +50,7 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(
 
     private fun onClickListeners(id: String) {
         findNavController().navigate(
-            PagerFragmentDirections.actionPagerFragmentToAnimeDetailFragment(
+            HomeFragmentDirections.actionHomeFragmentToAnimeDetailFragment(
                 id.toInt()
             )
         )

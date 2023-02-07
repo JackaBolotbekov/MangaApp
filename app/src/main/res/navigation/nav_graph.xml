@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/pagerFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/animeDetailFragment"
@@ -27,15 +27,15 @@
     </fragment>
 
     <fragment
-        android:id="@+id/pagerFragment"
-        android:name="com.example.animeapp.ui.fragments.pager.PagerFragment"
+        android:id="@+id/homeFragment"
+        android:name="com.example.animeapp.ui.fragments.pager.HomeFragment"
         android:label="fragment_pager"
-        tools:layout="@layout/fragment_pager">
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_pagerFragment_to_animeDetailFragment"
+            android:id="@+id/action_homeFragment_to_animeDetailFragment"
             app:destination="@id/animeDetailFragment" />
         <action
-            android:id="@+id/action_pagerFragment_to_mangaDetailFragment"
+            android:id="@+id/action_homeFragment_to_mangaDetailFragment"
             app:destination="@id/mangaDetailFragment" />
     </fragment>
 </navigation>
