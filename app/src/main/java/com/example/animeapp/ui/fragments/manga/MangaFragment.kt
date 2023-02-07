@@ -20,18 +20,18 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
     private val mangaAdapter = MangaAdapter(this::onClickListeners)
 
     override fun initialize() {
-        initial()
+        setupRecycler()
     }
 
     override fun setupSubscribes() {
-        setupObserves()
+        subscribeToAnimeById()
     }
 
-    private fun initial() = with(binding) {
+    private fun setupRecycler() = with(binding) {
         recyclerView.adapter = mangaAdapter
     }
 
-    private fun setupObserves() {
+    private fun subscribeToAnimeById() {
         viewModel.fetchManga().observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {

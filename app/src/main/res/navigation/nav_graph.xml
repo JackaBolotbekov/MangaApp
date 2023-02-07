@@ -9,28 +9,28 @@
         android:id="@+id/animeDetailFragment"
         android:name="com.example.animeapp.ui.fragments.anime.detail.AnimeDetailFragment"
         android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail" >
+        tools:layout="@layout/fragment_anime_detail">
         <argument
             android:name="id"
-            app:argType="integer"
-            android:defaultValue="0"/>
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/mangaDetailFragment"
         android:name="com.example.animeapp.ui.fragments.manga.detail.MangaDetailFragment"
         android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail" >
+        tools:layout="@layout/fragment_manga_detail">
         <argument
             android:name="id"
-            app:argType="integer"
-            android:defaultValue="0"/>
+            android:defaultValue="0"
+            app:argType="integer" />
     </fragment>
 
     <fragment
         android:id="@+id/pagerFragment"
         android:name="com.example.animeapp.ui.fragments.pager.PagerFragment"
         android:label="fragment_pager"
-        tools:layout="@layout/fragment_pager" >
+        tools:layout="@layout/fragment_pager">
         <action
             android:id="@+id/action_pagerFragment_to_animeDetailFragment"
             app:destination="@id/animeDetailFragment" />

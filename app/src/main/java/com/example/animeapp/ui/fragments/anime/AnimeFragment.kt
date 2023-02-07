@@ -1,6 +1,5 @@
 package com.example.animeapp.ui.fragments.anime
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -22,18 +21,18 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(
     private val animeAdapter = AnimeAdapter(this::onClickListeners)
 
     override fun initialize() {
-        initial()
+        setupRecycler()
     }
 
     override fun setupSubscribes() {
-        setupObserves()
+        subscribeToAnimeById()
     }
 
-    private fun initial() = with(binding) {
+    private fun setupRecycler() = with(binding) {
         recyclerView.adapter = animeAdapter
     }
 
-    private fun setupObserves() {
+    private fun subscribeToAnimeById() {
         viewModel.fetchAnime().observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {
@@ -50,8 +49,10 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(
     }
 
     private fun onClickListeners(id: String) {
-        findNavController().navigate(PagerFragmentDirections.actionPagerFragmentToAnimeDetailFragment(
-            id.toInt()
-        ))
+        findNavController().navigate(
+            PagerFragmentDirections.actionPagerFragmentToAnimeDetailFragment(
+                id.toInt()
+            )
+        )
     }
 }

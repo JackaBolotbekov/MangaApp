@@ -19,11 +19,11 @@ class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetail
     override val binding by viewBinding(FragmentAnimeDetailBinding::bind)
     private val args by navArgs<AnimeDetailFragmentArgs>()
 
-    override fun initialize() {
-        initial()
+    override fun setupSubscribes() {
+        subscribeToAnimeById()
     }
 
-    private fun initial() = with(binding) {
+    private fun subscribeToAnimeById() = with(binding) {
         viewModel.fetchAnimeDetail(args.id).observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {

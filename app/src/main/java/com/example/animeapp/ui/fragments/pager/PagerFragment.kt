@@ -1,7 +1,6 @@
 package com.example.animeapp.ui.fragments.pager
 
 import androidx.fragment.app.viewModels
-import androidx.viewpager.widget.ViewPager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapp.R
 import com.example.animeapp.base.BaseFragment
@@ -9,8 +8,6 @@ import com.example.animeapp.databinding.FragmentPagerBinding
 import com.example.animeapp.ui.adapters.PagerAdapter
 import com.example.animeapp.ui.fragments.anime.AnimeFragment
 import com.example.animeapp.ui.fragments.manga.MangaFragment
-import com.google.android.material.tabs.TabLayout
-import dagger.hilt.android.AndroidEntryPoint
 
 class PagerFragment : BaseFragment<FragmentPagerBinding, PagerViewModel>(R.layout.fragment_pager) {
 
