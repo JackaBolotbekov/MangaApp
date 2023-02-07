@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.pager.HomeFragment">
+    tools:context=".ui.fragments.home.HomeFragment">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
@@ -15,9 +15,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorHeight="0dp"
-         app:tabSelectedTextColor="@color/orange"
+        app:tabSelectedTextColor="@color/orange"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabTextColor="#888888" />
+        app:tabTextColor="#888888"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
@@ -27,6 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

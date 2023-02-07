@@ -8,7 +8,7 @@ import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentAnimeBinding
 import com.example.animeapp.extensions.showText
 import com.example.animeapp.ui.adapters.AnimeAdapter
-import com.example.animeapp.ui.fragments.pager.HomeFragmentDirections
+import com.example.animeapp.ui.fragments.home.HomeFragmentDirections
 import com.example.animeapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 

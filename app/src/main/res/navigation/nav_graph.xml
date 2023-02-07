@@ -28,7 +28,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.animeapp.ui.fragments.pager.HomeFragment"
+        android:name="com.example.animeapp.ui.fragments.home.HomeFragment"
         android:label="fragment_pager"
         tools:layout="@layout/fragment_home">
         <action

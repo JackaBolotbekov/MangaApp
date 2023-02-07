@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.pager
+package com.example.animeapp.ui.fragments.home
 
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
