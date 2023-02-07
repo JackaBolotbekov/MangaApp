@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="@color/orange"
+         app:tabSelectedTextColor="@color/orange"
         app:tabTextAppearance="@style/TabLayoutTextStyle"
         app:tabTextColor="#888888" />
 
