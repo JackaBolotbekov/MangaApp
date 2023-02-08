@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.actvity
+package com.example.animeapp.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
