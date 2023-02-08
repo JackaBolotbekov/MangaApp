@@ -24,14 +24,14 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
     }
 
     override fun setupSubscribes() {
-        subscribeToAnimeById()
+        subscribeToManga()
     }
 
     private fun setupRecycler() = with(binding) {
         recyclerView.adapter = mangaAdapter
     }
 
-    private fun subscribeToAnimeById() {
+    private fun subscribeToManga() {
         viewModel.fetchManga().observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {

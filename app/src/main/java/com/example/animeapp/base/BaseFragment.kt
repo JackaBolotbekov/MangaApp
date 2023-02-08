@@ -16,18 +16,18 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
-        setupRequests()
         setupListeners()
+        setupRequests()
         setupSubscribes()
     }
 
     protected open fun initialize() {
     }
 
-    protected open fun setupRequests() {
+    protected open fun setupListeners() {
     }
 
-    protected open fun setupListeners() {
+    protected open fun setupRequests() {
     }
 
     protected open fun setupSubscribes() {

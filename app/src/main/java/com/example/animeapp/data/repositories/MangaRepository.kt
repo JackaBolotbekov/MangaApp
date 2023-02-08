@@ -6,7 +6,6 @@ import javax.inject.Inject
 
 class MangaRepository @Inject constructor(private val service: MangaApiService) : BaseRepository() {
 
-    // Методы с помощью кокорых я стягиваю Manga
     fun fetchManga() = doRequest {
         service.fetchManga()
     }

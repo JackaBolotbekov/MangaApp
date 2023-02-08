@@ -20,10 +20,10 @@ class MangaDetailFragment : BaseFragment<FragmentMangaDetailBinding, MangaDetail
     private val args by navArgs<MangaDetailFragmentArgs>()
 
     override fun setupSubscribes() {
-        subscribeToAnimeById()
+        subscribeToMangaById()
     }
 
-    private fun subscribeToAnimeById() = with(binding) {
+    private fun subscribeToMangaById() = with(binding) {
         viewModel.fetchMangaDetail(args.id).observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {

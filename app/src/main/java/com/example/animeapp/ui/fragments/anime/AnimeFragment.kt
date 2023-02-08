@@ -25,14 +25,14 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(
     }
 
     override fun setupSubscribes() {
-        subscribeToAnimeById()
+        subscribeToAnime()
     }
 
     private fun setupRecycler() = with(binding) {
         recyclerView.adapter = animeAdapter
     }
 
-    private fun subscribeToAnimeById() {
+    private fun subscribeToAnime() {
         viewModel.fetchAnime().observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {
