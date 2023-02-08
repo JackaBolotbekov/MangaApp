@@ -7,8 +7,7 @@ import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.base.BaseViewModel
 import com.example.animeapp.databinding.FragmentHomeBinding
 import com.example.animeapp.ui.adapters.PagerAdapter
-import com.example.animeapp.ui.fragments.anime.AnimeFragment
-import com.example.animeapp.ui.fragments.manga.MangaFragment
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, BaseViewModel>(R.layout.fragment_home) {
 
@@ -19,12 +18,17 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, BaseViewModel>(R.layout.f
         tabLayout()
     }
 
-    private fun tabLayout() {
-        val pagerAdapter = PagerAdapter(childFragmentManager)
-        pagerAdapter.addFragment(AnimeFragment(), "Anime")
-        pagerAdapter.addFragment(MangaFragment(), "Manga")
-
-        binding.viewPager.adapter = pagerAdapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
-    }
+    private fun tabLayout() = with(binding) {
+        viewPager.adapter = PagerAdapter(this@HomeFragment)
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, pos ->
+            when (pos) {
+                0 -> {
+                    tab.text = "Anime"
+                }
+                1 -> {
+                    tab.text = "Manga"
+                }
+            }
+        }
+    }.attach()
 }

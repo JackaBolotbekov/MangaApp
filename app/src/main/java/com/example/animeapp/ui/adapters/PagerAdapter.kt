@@ -2,28 +2,21 @@ package com.example.animeapp.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.animeapp.ui.fragments.anime.AnimeFragment
+import com.example.animeapp.ui.fragments.manga.MangaFragment
 
-class PagerAdapter(fragment: FragmentManager) :
-    FragmentStatePagerAdapter(fragment, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+class PagerAdapter(fragment: Fragment) :
+    FragmentStateAdapter(fragment) {
 
-    var fragmentList: ArrayList<Fragment> = ArrayList()
-    var fragmentTitle: ArrayList<String?> = ArrayList()
+    override fun getItemCount(): Int = 2
 
-    override fun getCount(): Int {
-        return fragmentList.size
-    }
-
-    override fun getItem(position: Int): Fragment {
-        return fragmentList[position]
-    }
-
-    override fun getPageTitle(position: Int): CharSequence? {
-        return fragmentTitle[position]
-    }
-
-    fun addFragment(fragment: Fragment, title: String) {
-        fragmentList.add(fragment)
-        fragmentTitle.add(title)
+    override fun createFragment(position: Int): Fragment {
+        return when (position) {
+            0 -> AnimeFragment()
+            else -> MangaFragment()
+        }
     }
 }
