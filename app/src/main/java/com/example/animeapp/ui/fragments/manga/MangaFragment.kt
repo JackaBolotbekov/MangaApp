@@ -1,16 +1,16 @@
 package com.example.animeapp.ui.fragments.manga
 
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.animeapp.R
 import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentMangaBinding
-import com.example.animeapp.extensions.showText
 import com.example.animeapp.ui.adapters.MangaAdapter
 import com.example.animeapp.ui.fragments.home.HomeFragmentDirections
-import com.example.animeapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layout.fragment_manga) {
@@ -33,16 +33,8 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
 
     private fun subscribeToManga() {
         viewModel.fetchManga().observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Error -> {
-                    showText("Error")
-                }
-                is Resource.Loading -> {
-                    showText("Loading")
-                }
-                is Resource.Success -> {
-                    mangaAdapter.submitList(it.data?.data)
-                }
+            viewModel.fetchManga().observe(viewLifecycleOwner) {
+                lifecycleScope.launch { mangaAdapter.submitData(it) }
             }
         }
     }

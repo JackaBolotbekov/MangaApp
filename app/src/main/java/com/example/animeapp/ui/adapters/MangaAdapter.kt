@@ -2,8 +2,8 @@ package com.example.animeapp.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.animeapp.data.models.anime.DataItem
@@ -12,14 +12,14 @@ import com.example.animeapp.databinding.ItemMangaBinding
 class MangaAdapter(
     private val onClickListener: (id: String) -> Unit
 ) :
-    ListAdapter<DataItem, MangaAdapter.MangaViewHolder>(diffUtil) {
+    PagingDataAdapter<DataItem, MangaAdapter.MangaViewHolder>(diffUtil) {
 
     inner class MangaViewHolder(private val binding: ItemMangaBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
             itemView.setOnClickListener {
-                getItem(bindingAdapterPosition).apply { onClickListener(id) }
+                getItem(bindingAdapterPosition)?.apply { onClickListener(id) }
             }
         }
 
@@ -42,7 +42,7 @@ class MangaAdapter(
     }
 
     override fun onBindViewHolder(holder: MangaViewHolder, position: Int) {
-        getItem(position).let {
+        getItem(position)?.let {
             holder.onBind(it)
         }
     }

@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class Attributes(
     @SerializedName("posterImage")
     val posterImage: PosterImage,
+    @SerializedName("description")
+    val description: String = "",
     @SerializedName("titles")
-    val titles: MangaTitles,
+    val titles: Titles,
 )

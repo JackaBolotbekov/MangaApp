@@ -5,11 +5,15 @@ import com.example.animeapp.data.models.anime.Response
 import com.example.animeapp.data.models.anime.detail.AnimeDetail
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface AnimeApiService {
 
     @GET("anime")
-    suspend fun fetchAnime(): Response<DataItem>
+    suspend fun fetchAnime(
+        @Query("page[limit]") limit: Int,
+        @Query("page[offset]") offset: Int
+    ): Response<DataItem>
 
     @GET("anime/{id}")
     suspend fun fetchAnimeDetail(
