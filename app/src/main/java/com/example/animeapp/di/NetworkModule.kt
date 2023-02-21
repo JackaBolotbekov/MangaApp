@@ -30,4 +30,3 @@ object NetworkModule {
     fun provideSignInApiService(retrofitClient: RetrofitClient) =
         retrofitClient.providerSignInApiService()
 }
-

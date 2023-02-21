@@ -9,5 +9,5 @@ import javax.inject.Inject
 class AnimeDetailViewModel @Inject constructor(private val animeRepository: AnimeRepository) :
     BaseViewModel() {
 
-    fun fetchAnimeDetail(id: Int) = animeRepository.fetchAnimeDetail(id = id)
+    fun fetchAnimeDetail(id: Int) = animeRepository.fetchAnimeDetail(id)
 }

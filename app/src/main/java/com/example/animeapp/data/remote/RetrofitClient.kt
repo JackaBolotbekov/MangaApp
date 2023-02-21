@@ -3,7 +3,6 @@ package com.example.animeapp.data.remote
 import com.example.animeapp.data.remote.apiservices.AnimeApiService
 import com.example.animeapp.data.remote.apiservices.MangaApiService
 import com.example.animeapp.data.remote.apiservices.SignInApiService
-import com.example.animeapp.data.repositories.TokenInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,7 +13,6 @@ class RetrofitClient {
 
     private val okHttpClient = OkHttpClient()
         .newBuilder()
-        .addInterceptor(TokenInterceptor())
         .addInterceptor(provideLoggingInterceptor())
         .callTimeout(30, TimeUnit.SECONDS)
         .connectTimeout(30, TimeUnit.SECONDS)
@@ -23,9 +21,9 @@ class RetrofitClient {
         .build()
 
     private val retrofitClient = Retrofit.Builder()
-        .baseUrl("https://kitsu.io/api/edge/")
-        .client(okHttpClient)
+        .baseUrl("https://kitsu.io/api/")
         .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttpClient)
         .build()
 
     private fun provideLoggingInterceptor() =

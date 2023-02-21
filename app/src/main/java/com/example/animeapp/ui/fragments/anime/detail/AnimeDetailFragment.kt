@@ -3,12 +3,11 @@ package com.example.animeapp.ui.fragments.anime.detail
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.bumptech.glide.Glide
 import com.example.animeapp.R
 import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentAnimeDetailBinding
+import com.example.animeapp.extensions.glideWith
 import com.example.animeapp.extensions.showText
-import com.example.animeapp.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,21 +23,16 @@ class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetail
     }
 
     private fun subscribeToAnimeById() = with(binding) {
-        viewModel.fetchAnimeDetail(args.id).observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Error -> {
-                    showText("Error")
-                }
-                is Resource.Loading -> {
-                    showText("Detail")
-                }
-                is Resource.Success -> {
-                    Glide.with(ivFullscreen.context)
-                        .load(it.data?.data?.attributes?.posterImage?.original)
-                        .into(ivFullscreen)
-                    tvNameDetail.text = it.data?.data?.attributes?.titles?.enJp
+        viewModel.fetchAnimeDetail(args.id).subscribe(
+            onError ={
+                showText(it)
+            },
+            onSuccess = {
+                it.data.let { anime ->
+                    binding.ivFullscreen.glideWith(anime.attributes.posterImage.original)
+                    tvNameDetail.text = anime.attributes.titles.enJp
                 }
             }
-        }
+        )
     }
 }
