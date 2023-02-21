@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.anime.detail
+package com.example.animeapp.ui.fragments.main.anime.detail
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -24,7 +24,7 @@ class AnimeDetailFragment : BaseFragment<FragmentAnimeDetailBinding, AnimeDetail
 
     private fun subscribeToAnimeById() = with(binding) {
         viewModel.fetchAnimeDetail(args.id).subscribe(
-            onError ={
+            onError = {
                 showText(it)
             },
             onSuccess = {

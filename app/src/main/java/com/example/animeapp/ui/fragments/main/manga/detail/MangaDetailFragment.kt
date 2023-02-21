@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.manga.detail
+package com.example.animeapp.ui.fragments.main.manga.detail
 
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs

@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.anime.detail
+package com.example.animeapp.ui.fragments.main.anime.detail
 
 import com.example.animeapp.base.BaseViewModel
 import com.example.animeapp.data.repositories.AnimeRepository

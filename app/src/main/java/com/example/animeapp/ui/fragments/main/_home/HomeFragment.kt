@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.home
+package com.example.animeapp.ui.fragments.main._home
 
 import android.os.Bundle
 import android.view.View

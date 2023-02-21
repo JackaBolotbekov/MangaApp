@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.anime
+package com.example.animeapp.ui.fragments.main.anime
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -9,7 +9,7 @@ import com.example.animeapp.R
 import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentAnimeBinding
 import com.example.animeapp.ui.adapters.AnimeAdapter
-import com.example.animeapp.ui.fragments.home.HomeFragmentDirections
+import com.example.animeapp.ui.fragments.main._home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

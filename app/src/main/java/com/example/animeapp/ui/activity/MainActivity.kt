@@ -29,12 +29,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         val navController = navHostFragment.navController
 
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
+
         when {
             userPreferencesData.isAuthorized -> {
-                navGraph.setStartDestination(R.id.homeFragment)
+                navGraph.setStartDestination(R.id.mainFlowFragment)
             }
             else -> {
-                navGraph.setStartDestination(R.id.signUpFragment)
+                navGraph.setStartDestination(R.id.signFlowFragment)
             }
         }
         navController.graph = navGraph

@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.manga
+package com.example.animeapp.ui.fragments.main.manga
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -8,7 +8,7 @@ import com.example.animeapp.R
 import com.example.animeapp.base.BaseFragment
 import com.example.animeapp.databinding.FragmentMangaBinding
 import com.example.animeapp.ui.adapters.MangaAdapter
-import com.example.animeapp.ui.fragments.home.HomeFragmentDirections
+import com.example.animeapp.ui.fragments.main._home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

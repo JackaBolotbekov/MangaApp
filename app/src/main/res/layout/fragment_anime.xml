@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#2E2121"
     android:padding="3dp"
-    tools:context=".ui.fragments.anime.AnimeFragment">
+    tools:context=".ui.fragments.main.anime.AnimeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

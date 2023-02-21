@@ -1,4 +1,4 @@
-package com.example.animeapp.ui.fragments.manga
+package com.example.animeapp.ui.fragments.main.manga
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn

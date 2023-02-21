@@ -3,50 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/signUpFragment">
+    app:startDestination="@id/mainFlowFragment">
 
     <fragment
-        android:id="@+id/animeDetailFragment"
-        android:name="com.example.animeapp.ui.fragments.anime.detail.AnimeDetailFragment"
-        android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail">
-        <argument
-            android:name="id"
-            android:defaultValue="0"
-            app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/mangaDetailFragment"
-        android:name="com.example.animeapp.ui.fragments.manga.detail.MangaDetailFragment"
-        android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail">
-        <argument
-            android:name="id"
-            android:defaultValue="0"
-            app:argType="integer" />
+        android:id="@+id/signFlowFragment"
+        android:name="com.example.animeapp.ui.fragments.sign.SignFlowFragment"
+        android:label="fragment_sign_flow"
+        tools:layout="@layout/fragment_sign_flow">
+        <action
+            android:id="@+id/action_signFlowFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@id/nav_graph" />
     </fragment>
 
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.animeapp.ui.fragments.home.HomeFragment"
-        android:label="fragment_pager"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_animeDetailFragment"
-            app:destination="@id/animeDetailFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.example.animeapp.ui.fragments.signup.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up">
-        <action
-            android:id="@+id/action_signUpFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/signUpFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+        android:id="@+id/mainFlowFragment"
+        android:name="com.example.animeapp.ui.fragments.main.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow" />
+
 </navigation>
